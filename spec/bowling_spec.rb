@@ -1,12 +1,13 @@
 require_relative '../bowling'
 
 describe Bowling do
-    it "will return zero score at start of game (no bowling balls rolled)" do
-        # Arrange
-        bowling = described_class.new
+    before(:each) do
+        @bowling = described_class.new
+    end
 
+    it "will return zero score at start of game (no bowling balls rolled)" do
         # Act
-        result = bowling.get_score("")
+        result = @bowling.get_score("")
 
         # Assert
         expect(result).to eq(0)
