@@ -1,5 +1,6 @@
 class Bowling
     def get_score(rolls)
-        rolls.to_i
+        score = rolls.to_i
+        return score
     end
 end
