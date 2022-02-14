@@ -13,15 +13,12 @@ describe Bowling do
         expect(result).to eq(0)
     end
 
-    expected_scores_for_rolls = {
-        "2" => 2,
-        "5" => 5
-    }
+    expected_scores_for_rolls = [2, 5]
 
-    expected_scores_for_rolls.each do |rolls, expected_score|
+    expected_scores_for_rolls.each do |expected_score|
         it "will return score equal to number of pins after one roll" do
             # Act
-            result = @bowling.get_score(rolls)
+            result = @bowling.get_score("#{expected_score}")
     
             # Assert
             expect(result).to eq(expected_score)
