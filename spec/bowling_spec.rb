@@ -20,11 +20,8 @@ describe Bowling do
 
     expected_scores_for_rolls.each do |rolls, expected_score|
         it "will return score equal to number of pins after one roll" do
-            # Arrange
-            bowling = described_class.new
-    
             # Act
-            result = bowling.get_score(rolls)
+            result = @bowling.get_score(rolls)
     
             # Assert
             expect(result).to eq(expected_score)
@@ -33,13 +30,12 @@ describe Bowling do
     
     it "will return score equal to total of pins, after two rolls and not all pins knocked down" do
         # Arrange
-        bowling = described_class.new
         first_roll = 2
         second_roll = 5
         expected_score = first_roll + second_roll
 
         # Act
-        result = bowling.get_score("#{first_roll}#{second_roll}")
+        result = @bowling.get_score("#{first_roll}#{second_roll}")
 
         # Assert
         expect(result).to eq(expected_score)
